@@ -1,23 +1,29 @@
 {
-    "name": "statamic/eloquent-entries-example",
+    "name": "allenjd3/mongo-entries-example",
     "description": "An example package that allows you to store Statamic entries in a database.",
     "autoload": {
         "psr-4": {
-            "Statamic\\Eloquent\\Entries\\": "src"
+            "Allenjd3\\Mongo\\Entries\\": "src"
         }
     },
     "extra": {
         "statamic": {
-            "name": "Eloquent Entries Example",
+            "name": "Mongo Entries Example",
             "description": "An example package that allows you to store Statamic entries in a database."
         },
         "laravel": {
             "providers": [
-                "Statamic\\Eloquent\\Entries\\ServiceProvider"
+                "Allenjd3\\Mongo\\Entries\\ServiceProvider"
             ]
         }
     },
     "require": {
-        "statamic/cms": "^3.0"
+        "statamic/cms": "^3.0",
+        "mongodb/laravel-mongodb": "^3.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
     }
 }

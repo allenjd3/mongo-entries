@@ -1,8 +1,8 @@
 <?php
 
-namespace Statamic\Eloquent\Entries;
+namespace Allenjd3\Mongo\Entries;
 
-use Statamic\Eloquent\Entries\EntryModel as Model;
+use Allenjd3\Mongo\Entries\EntryModel as Model;
 use Statamic\Entries\Entry as FileEntry;
 use Statamic\Support\Str;
 
@@ -77,10 +77,10 @@ class Entry extends FileEntry
 
     public function originId()
     {
-        return optional($this->origin)->id() ?? optional($this->model)->origin_id;
+        return $this->origin?->id() ?? $this->model?->origin_id;
     }
 
-    public function hasOrigin()
+    public function hasOrigin(): bool
     {
         return $this->originId() !== null;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Statamic\Eloquent\Entries;
+namespace Allenjd3\Mongo\Entries;
 
 use Statamic\Contracts\Entries\QueryBuilder;
 use Statamic\Entries\EntryCollection;

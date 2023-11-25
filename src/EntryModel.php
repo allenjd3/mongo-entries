@@ -1,16 +1,29 @@
 <?php
 
-namespace Statamic\Eloquent\Entries;
+namespace Allenjd3\Mongo\Entries;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Jenssegers\Mongodb\Eloquent\Model;
 
-class EntryModel extends Eloquent
+class EntryModel extends Model
 {
     protected $guarded = [];
-
-    protected $table = 'entries';
+    protected $fillable = [
+        'id',
+        'origin_id',
+        'site',
+        'slug',
+        'uri',
+        'date',
+        'collection',
+        'data',
+        'published',
+        'status',
+    ];
+    protected $collection = 'entries';
 
     public $incrementing = false;
+
+    protected $primaryKey = 'id';
 
     protected $keyType = 'string';
 
