@@ -16,7 +16,7 @@ class EntryRepository extends StacheRepository
         ];
     }
 
-    public function save($entry)
+    public function save($entry): void
     {
         $model = $entry->toModel();
 
@@ -25,7 +25,7 @@ class EntryRepository extends StacheRepository
         $entry->model($model->fresh());
     }
 
-    public function delete($entry)
+    public function delete($entry): void
     {
         $entry->model()->delete();
     }

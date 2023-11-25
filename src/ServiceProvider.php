@@ -9,7 +9,7 @@ use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         Statamic::repository(EntryRepositoryContract::class, EntryRepository::class);
         Statamic::repository(CollectionRepositoryContract::class, CollectionRepository::class);

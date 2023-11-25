@@ -18,8 +18,8 @@
         }
     },
     "require": {
-        "statamic/cms": "^3.0",
-        "mongodb/laravel-mongodb": "^3.9"
+        "mongodb/laravel-mongodb": "^3.9",
+        "statamic/cms": "^4.36"
     },
     "config": {
         "allow-plugins": {

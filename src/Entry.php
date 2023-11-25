@@ -38,7 +38,7 @@ class Entry extends FileEntry
         ]);
     }
 
-    public function model($model = null)
+    public function model($model = null): static
     {
         if (func_num_args() === 0) {
             return $this->model;
