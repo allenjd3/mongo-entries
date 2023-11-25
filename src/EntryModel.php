@@ -2,7 +2,8 @@
 
 namespace Allenjd3\Mongo\Entries;
 
-use Jenssegers\Mongodb\Eloquent\Model;
+
+use MongoDB\Laravel\Eloquent\Model;
 
 class EntryModel extends Model
 {
