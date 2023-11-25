@@ -18,8 +18,7 @@ A package intended for real usage exists at [statamic/eloquent-driver](https://g
         }
     ]
     ```
-- Require it with `composer require statamic/eloquent-entries-example`
-- Run migrations with `php artisan migrate`
+- Require it with `allenjd3/mongo-entries-example`
 
 ## Schema
 
