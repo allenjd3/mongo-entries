@@ -18,8 +18,8 @@ class Entry extends FileEntry
         return (new static)
             ->locale($model->site)
             ->slug($model->slug)
-            ->date($model->date)
             ->collection($model->statamic_collection)
+            ->date($model->date)
             ->data($model->data)
             ->published($model->published)
             ->model($model);
@@ -33,11 +33,11 @@ class Entry extends FileEntry
             'site' => $this->locale(),
             'slug' => $this->slug(),
             'uri' => $this->uri(),
-            'date' => $this->date(),
             'statamic_collection' => $this->collectionHandle(),
             'data' => $this->data(),
             'published' => $this->published(),
             'status' => $this->status(),
+            'date' => $this->date(),
         ]);
     }
 
@@ -110,10 +110,6 @@ class Entry extends FileEntry
                 return $date;
             })
             ->setter(function ($date) {
-//                if (! $this->collection()?->dated()) {
-//                    throw new LogicException('Cannot set date on non-dated collection entry.');
-//                }
-
                 if ($date === null) {
                     return null;
                 }
