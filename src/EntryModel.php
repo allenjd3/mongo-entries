@@ -15,7 +15,7 @@ class EntryModel extends Model
         'slug',
         'uri',
         'date',
-        'collection',
+        'statamic_collection',
         'data',
         'published',
         'status',

@@ -4,16 +4,15 @@ namespace Allenjd3\Mongo\Entries;
 
 use Statamic\Contracts\Entries\QueryBuilder;
 use Statamic\Entries\EntryCollection;
-use Statamic\Query\EloquentQueryBuilder;
 use Statamic\Stache\Query\QueriesTaxonomizedEntries;
 
-class EntryQueryBuilder extends EloquentQueryBuilder implements QueryBuilder
+class EntryQueryBuilder extends MongoQueryBuilder implements QueryBuilder
 {
     use QueriesTaxonomizedEntries;
 
     protected $columns = [
         'id', 'site', 'origin_id', 'published', 'status', 'slug', 'uri',
-        'date', 'collection', 'created_at', 'updated_at',
+        'date', 'statamic_collection', 'created_at', 'updated_at',
     ];
 
     protected function transform($items, $columns = [])
@@ -40,14 +39,14 @@ class EntryQueryBuilder extends EloquentQueryBuilder implements QueryBuilder
     {
         $this->addTaxonomyWheres();
 
-        return parent::get($columns);
+        return parent::get();
     }
 
-    public function paginate($perPage = null, $columns = ['*'])
+    public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
         $this->addTaxonomyWheres();
 
-        return parent::paginate($perPage, $columns);
+        return parent::paginate($perPage, $columns, $pageName, $page);
     }
 
     public function count()

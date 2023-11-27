@@ -2,8 +2,10 @@
 
 namespace Allenjd3\Mongo\Entries;
 
+use Allenjd3\Mongo\Entries\Support\Collection;
 use Statamic\Contracts\Entries\CollectionRepository as CollectionRepositoryContract;
 use Statamic\Contracts\Entries\EntryRepository as EntryRepositoryContract;
+use Statamic\Entries\Collection as StatamicCollection;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
 
@@ -13,6 +15,10 @@ class ServiceProvider extends AddonServiceProvider
     {
         Statamic::repository(EntryRepositoryContract::class, EntryRepository::class);
         Statamic::repository(CollectionRepositoryContract::class, CollectionRepository::class);
+
+        $this->app->bind(StatamicCollection::class, function () {
+            return new Collection();
+        });
 
         $this->app->bind(EntryQueryBuilder::class, function () {
             return new EntryQueryBuilder(EntryModel::query());
