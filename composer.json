@@ -3,7 +3,7 @@
     "description": "An example package that allows you to store Statamic entries in a database.",
     "autoload": {
         "psr-4": {
-            "Allenjd3\\Mongo\\Entries\\": "src"
+            "Allenjd3\\Mongo\\": "src"
         }
     },
     "extra": {
@@ -13,7 +13,7 @@
         },
         "laravel": {
             "providers": [
-                "Allenjd3\\Mongo\\Entries\\ServiceProvider"
+                "Allenjd3\\Mongo\\ServiceProvider"
             ]
         }
     },

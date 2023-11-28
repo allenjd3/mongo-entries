@@ -1,6 +1,6 @@
 <?php
 
-namespace Allenjd3\Mongo\Entries\Support;
+namespace Allenjd3\Mongo\Support;
 
 use Statamic\Entries\Collection as StatamicCollection;
 use Statamic\Facades;

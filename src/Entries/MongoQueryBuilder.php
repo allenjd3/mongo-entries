@@ -4,10 +4,10 @@ namespace Allenjd3\Mongo\Entries;
 
 use Closure;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\Carbon;
 use InvalidArgumentException;
 use Statamic\Contracts\Query\Builder;
-use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Statamic\Extensions\Pagination\LengthAwarePaginator;
 use Statamic\Support\Arr;
 

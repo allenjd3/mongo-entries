@@ -4,9 +4,9 @@ namespace Allenjd3\Mongo\Entries;
 
 use Allenjd3\Mongo\Entries\EntryModel as Model;
 use Carbon\Carbon;
+use Statamic\Entries\Collection;
 use Statamic\Entries\Entry as FileEntry;
 use Statamic\Facades\Blink;
-use Statamic\Entries\Collection;
 use Statamic\Support\Str;
 
 class Entry extends FileEntry

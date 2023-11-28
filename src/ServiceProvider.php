@@ -1,8 +1,12 @@
 <?php
 
-namespace Allenjd3\Mongo\Entries;
+namespace Allenjd3\Mongo;
 
-use Allenjd3\Mongo\Entries\Support\Collection;
+use Allenjd3\Mongo\Entries\CollectionRepository;
+use Allenjd3\Mongo\Entries\EntryModel;
+use Allenjd3\Mongo\Entries\EntryQueryBuilder;
+use Allenjd3\Mongo\Entries\EntryRepository;
+use Allenjd3\Mongo\Support\Collection;
 use Statamic\Contracts\Entries\CollectionRepository as CollectionRepositoryContract;
 use Statamic\Contracts\Entries\EntryRepository as EntryRepositoryContract;
 use Statamic\Entries\Collection as StatamicCollection;
