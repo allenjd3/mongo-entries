@@ -1,6 +1,6 @@
 <?php
 
-namespace Allenjd3\Mongo\Providers;
+namespace Allenjd3\Mongo;
 
 use Allenjd3\Mongo\Auth\MongoUserProvider;
 use Allenjd3\Mongo\Entries\CollectionRepository;
