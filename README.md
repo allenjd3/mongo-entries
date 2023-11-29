@@ -1,4 +1,4 @@
-# Statamic Eloquent Entries Example
+# Statamic Mongo Entries
 
 ## Installation
 
