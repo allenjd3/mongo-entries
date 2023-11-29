@@ -110,6 +110,9 @@ abstract class MongoQueryBuilder implements Builder
 
         if ($value instanceof \Stringable) {
             $value = (string) $value;
+        } elseif ($value === null) {
+            $value = (string) $operator;
+            $operator = '=';
         }
 
         $this->builder->where($this->column($column), $operator, $value, $boolean);
