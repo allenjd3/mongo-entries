@@ -33,9 +33,9 @@ class ServiceProvider extends AddonServiceProvider
 
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . './MongoAuthServiceProvider.php',
-            base_path('app/Providers/MongoAuthServiceProvider.php'),
-        ]);
+//        $this->publishes([
+//            __DIR__ . './MongoAuthServiceProvider.php',
+//            base_path('app/Providers/MongoAuthServiceProvider.php'),
+//        ]);
     }
 }
