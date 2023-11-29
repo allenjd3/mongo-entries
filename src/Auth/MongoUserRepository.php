@@ -8,7 +8,7 @@ use Statamic\Auth\Eloquent\UserGroupRepository;
 use Statamic\Auth\UserCollection;
 use Statamic\Auth\UserRepository;
 use Statamic\Contracts\Auth\User as UserContract;
-use App\Auth\MongoUser as User;
+use Allenjd3\Mongo\Auth\MongoUser as User;
 use Statamic\OAuth\Provider;
 
 class MongoUserRepository extends UserRepository implements \Statamic\Contracts\Auth\UserRepository
