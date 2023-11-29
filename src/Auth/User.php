@@ -1,0 +1,28 @@
+<?php
+
+namespace Allenjd3\Mongo\Auth;
+
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\MustVerifyEmail;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use MongoDB\Laravel\Eloquent\Model;
+
+class User extends Model implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
+{
+    use Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail;
+
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \Statamic\Notifications\PasswordReset($token));
+    }
+}
