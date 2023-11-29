@@ -30,12 +30,4 @@ class ServiceProvider extends AddonServiceProvider
             return new EntryQueryBuilder(EntryModel::query());
         });
     }
-
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__ . './Providers/MongoAuthServiceProvider.php',
-            base_path('app/Providers/MongoAuthServiceProvider.php'),
-        ]);
-    }
 }
