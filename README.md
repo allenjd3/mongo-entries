@@ -27,6 +27,12 @@ DB_DSN=mongodb://
 
 ## Usage
 
+Start by creating a new Statamic site. If you are planning to use mongodb to store users, you can skip creating a user.
+
+```bash
+statamic new my-site
+```
+
 If you'd like to use authentication, you will need to change some config values.
 
 First register MongoAuthServiceProvider in `config/app.php`.
@@ -34,7 +40,7 @@ First register MongoAuthServiceProvider in `config/app.php`.
 ```php
 'providers' => [
     // ...
-    \Allenjd3\Mongo\Auth\MongoAuthServiceProvider::class,
+    \Allenjd3\Mongo\Providers\MongoAuthServiceProvider::class,
 ],
 ```
 
@@ -44,11 +50,20 @@ Then change the `repository` config in `config/statamic/users.php`.
 'repository' => 'mongo',
 'repositories' => [
     'mongo' => [
-        'driver' => 'eloquent',
-        'model' => App\Model\User::class,
+        'driver' => 'mongo',
     ],
 ],
 ```
+
+Add the following to the `providers` array in `config/auth.php`.
+
+```php
+        'users' => [
+            'driver' => 'mongo',
+            'model' => App\Models\User::class,
+        ],
+```
+
 
 Then in your App\Model\User class, you will need to extend the Allenjd3\Mongo\Auth\User class as authenticatable
 ```php
